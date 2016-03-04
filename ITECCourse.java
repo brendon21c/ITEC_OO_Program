@@ -71,10 +71,24 @@ public class ITECCourse {
 
         System.out.println("There are " + getNumberOfStudents() + " students enrolled");
         System.out.println("The max number of students for this course is  " + this.maxStudents);
+        System.out.println("There are " + freeSlots() + " seats left in this class.");
     }
 
     public int getNumberOfStudents() {
+
         return this.students.size();
+    }
+
+    public int freeSlots() { // Math for finding open spots in the class
+
+        return this.maxStudents - getNumberOfStudents();
+    }
+
+    public void classFreeSpots() { // class name and open spots
+
+        System.out.println("Course name: " + this.name);
+        System.out.println("There are " + freeSlots() + " seats left in this class.");
+
     }
 
 

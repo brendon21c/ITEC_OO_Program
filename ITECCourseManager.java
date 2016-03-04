@@ -1,8 +1,13 @@
 package com.Brendon;
 
+import java.util.ArrayList;
+
 public class ITECCourseManager {
 
     public static void main(String[] args) {
+
+        ArrayList<ITECCourse> courseList = new ArrayList<ITECCourse>();
+
 
         // Micro Computer class
         ITECCourse maintenanceCourse =
@@ -13,7 +18,8 @@ public class ITECCourseManager {
         maintenanceCourse.addStudent("Bill");
         maintenanceCourse.addStudent("Carl");
 
-        maintenanceCourse.writeCourseInfo();
+        courseList.add(maintenanceCourse);
+
 
         // Data Communications
         ITECCourse datacomCourse =
@@ -23,20 +29,29 @@ public class ITECCourseManager {
         datacomCourse.addStudent("Ed");
         datacomCourse.addStudent("Flora");
 
-        datacomCourse.removeStudent("Dave");
-        datacomCourse.removeStudent("Mike");
+        //datacomCourse.removeStudent("Dave");
+        //datacomCourse.removeStudent("Mike");
 
-        datacomCourse.writeCourseInfo();
+        courseList.add(datacomCourse);
+
 
         // new class
-        ITECCourse test = new ITECCourse("Infotech Concepts", 1100, 3010, 30);
+        ITECCourse infoTech = new ITECCourse("Infotech Concepts", 1100, 3010, 30);
 
-        test.addStudent("Nancy");
-        test.addStudent("Max");
-        test.addStudent("Orson");
+        infoTech.addStudent("Nancy");
+        infoTech.addStudent("Max");
+        infoTech.addStudent("Orson");
 
-        test.writeCourseInfo();
+        courseList.add(infoTech);
 
+        // Goes over the list and prints out class name and number of open spots.
+        for (ITECCourse item : courseList) {
+
+            ITECCourse temp = item;
+            temp.classFreeSpots();
+            System.out.println();
+
+        }
 
     }
 }
